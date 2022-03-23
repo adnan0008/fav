@@ -6,14 +6,16 @@
     <!-- Basic Alerts start -->
     <section id="home-page">
       <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
+        <div class="col-md-12">
+          <!-- <div class="card"> -->
+            <!-- <div class="card-header">
               <h4 class="card-title">Kick start your project 🚀</h4>
-            </div>
-            <div class="card-body pb-1">
-              <p class="card-text">All the best for your new project.</p>
-              <p class="card-text">
+            </div> -->
+            <!-- <div class="card-body pb-1" *ngFor="let data of products"> -->
+              <!-- <div class="card-header" *ngFor="let data of products">
+              <strong>{{data?.title}}</strong> -->
+              <!-- <p class="card-text">All the best for your new project.</p> -->
+              <!-- <p class="card-text">
                 Please make sure to read our
                 <a
                   href="https://pixinvent.com/demo/vuexy-angular-admin-dashboard-template/documentation/"
@@ -21,10 +23,23 @@
                   >Template Documentation</a
                 >
                 to understand where to go from here and how to use our template.
-              </p>
+              </p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+         <div class="card" *ngFor="let data of products">
+           <label><h6>Product Name</h6></label>
+          <strong>{{data?.title}}</strong>
+            <div *ngFor="let value of data?.review_data">
+             Rating: {{value?.Rating}}
+             Review: {{value?.Review}}
+             Review Time: {{value?.reviewTime}}
+             Status: {{value?.status}}
             </div>
-          </div>
+         </div> 
         </div>
+        <!-- <div class="col-md-6">
+          Reviews
+        </div> -->
       </div>
     </section>
     <!-- Basic Alerts end -->

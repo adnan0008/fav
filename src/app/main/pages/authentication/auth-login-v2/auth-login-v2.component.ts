@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoreConfigService } from '@core/services/config.service';
+import { HttpService } from 'app/service/http.service';
 
 @Component({
   selector: 'app-auth-login-v2',
@@ -34,7 +35,8 @@ export class AuthLoginV2Component implements OnInit {
     private _coreConfigService: CoreConfigService,
     private _formBuilder: FormBuilder,
     private _route: ActivatedRoute,
-    private _router: Router
+    private _router: Router,
+    private httpService: HttpService
   ) {
     this._unsubscribeAll = new Subject();
 
@@ -74,15 +76,25 @@ export class AuthLoginV2Component implements OnInit {
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
+    }else{
+      console.log(this.loginForm.value);
+      
+    this.httpService.post('accounts/login/', this.loginForm.value).subscribe((response) => 
+    {
+      this.httpService.serLoggerInUser(true);
+      localStorage.setItem('token', response?.token);
+      this._router.navigate(['/home']);
+    });
+      
     }
 
     // Login
     this.loading = true;
 
     // redirect to home page
-    setTimeout(() => {
-      this._router.navigate(['/']);
-    }, 100);
+    // setTimeout(() => {
+    //   this._router.navigate(['/']);
+    // }, 100);
   }
 
   // Lifecycle Hooks
@@ -93,7 +105,7 @@ export class AuthLoginV2Component implements OnInit {
    */
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
       password: ['', Validators.required]
     });
 
