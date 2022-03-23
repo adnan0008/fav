@@ -1,10 +1,11 @@
+import { ToastrService } from 'ngx-toastr';
+import { HttpService } from './../../../../service/http.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
 import { CoreConfigService } from '@core/services/config.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-register-v2',
@@ -28,7 +29,8 @@ export class AuthRegisterV2Component implements OnInit {
    * @param {CoreConfigService} _coreConfigService
    * @param {FormBuilder} _formBuilder
    */
-  constructor(private _coreConfigService: CoreConfigService, private _formBuilder: FormBuilder) {
+  constructor(private _coreConfigService: CoreConfigService, private _formBuilder: FormBuilder,
+    private httpService: HttpService, private router: Router, private toasterService: ToastrService) {
     this._unsubscribeAll = new Subject();
 
     // Configure the layout
@@ -70,6 +72,15 @@ export class AuthRegisterV2Component implements OnInit {
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
+    }else{
+      const formData = new FormData();
+      formData.append('username',this.registerForm.value.username );
+      formData.append('email',this.registerForm.value.email );
+      formData.append('password',this.registerForm.value.password );
+    this.httpService.post('accounts/register/', formData).subscribe((response) => {if(response){
+      this.toasterService.success('You have successfully signed up', 'Success');
+      this.router.navigate(['/pages/authentication/login-v2'])
+    }});
     }
   }
 

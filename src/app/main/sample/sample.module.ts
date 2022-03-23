@@ -1,5 +1,6 @@
+import { AuthGuard } from './../../auth/helpers/auth.guards';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule} from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { CoreCommonModule } from '@core/common.module';
@@ -18,7 +19,8 @@ const routes = [
   {
     path: 'home',
     component: HomeComponent,
-    data: { animation: 'home' }
+    data: { animation: 'home' },
+    // canActivate: [AuthGuard]
   }
 ];
 

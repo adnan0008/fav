@@ -18,20 +18,24 @@ import { coreConfig } from 'app/app-config';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
+import { AuthGuard } from './auth/helpers/auth.guards';
 
 const appRoutes: Routes = [
   {
+    // canActivate:[AuthGuard],
     path: 'pages',
     loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule)
   },
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    // redirectTo: '/home',
+    redirectTo:'/pages/authentication/login-v2',
+    pathMatch: 'full',
+   
   },
   {
     path: '**',
-    redirectTo: '/pages/miscellaneous/error' //Error 404 - Page not found
+    redirectTo: '/pages/authentication/login-v2' //Error 404 - Page not found
   }
 ];
 
