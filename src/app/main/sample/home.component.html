@@ -1,12 +1,12 @@
-<div class="content-wrapper container-xxl p-0">
-  <div class="content-body">
+<!-- <div class="content-wrapper container-xxl p-0">
+  <div class="content-body"> -->
     <!-- content-header component -->
-    <app-content-header [contentHeader]="contentHeader"></app-content-header>
+    <!-- <app-content-header [contentHeader]="contentHeader"></app-content-header> -->
 
     <!-- Basic Alerts start -->
-    <section id="home-page">
+    <!-- <section id="home-page">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12"> -->
           <!-- <div class="card"> -->
             <!-- <div class="card-header">
               <h4 class="card-title">Kick start your project 🚀</h4>
@@ -26,7 +26,7 @@
               </p> -->
             <!-- </div> -->
           <!-- </div> -->
-         <div class="card" *ngFor="let data of products">
+         <!-- <div class="card" *ngFor="let data of products">
            <label><h6>Product Name</h6></label>
           <strong>{{data?.title}}</strong>
             <div *ngFor="let value of data?.review_data">
@@ -36,12 +36,121 @@
              Status: {{value?.status}}
             </div>
          </div> 
-        </div>
+        </div> -->
         <!-- <div class="col-md-6">
           Reviews
         </div> -->
-      </div>
-    </section>
+      <!-- </div>
+    </section> -->
     <!-- Basic Alerts end -->
-  </div>
+  <!-- </div>
+</div> -->
+
+<div class="search-input" [class.open]="openSearchRef === true">
+  <!-- <div class="search-input-icon"><span [data-feather]="'search'"></span></div> -->
+  <input
+  class="form-control input"
+  type="text"
+  placeholder="Search Item..."
+  tabindex="-1"
+  data-search="search"
+  (keyup)="searchUpdate($event)"
+  [(ngModel)]="searchText"
+  #openSearch
+/>
 </div>
+<head>
+  <!-- <link rel="stylesheet" href="/home.component.scss"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="pgSize" *ngFor="let data of products">
+      <h1>{{data?.title}}</h1>
+      <div class="reviws-head">
+          <h2>Reviews</h2>
+      </div>
+      <div class="paddig" *ngFor="let value of data?.review_data">
+          <div class="reviws-main">
+              <div class="review">
+                  <h3>{{value?.status}}</h3>
+                  <h4>{{value?.reviewTime}}</h4>
+              </div>
+          </div>
+          <div class="rating-main">
+              <div class="rating">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <p>{{value?.Review}}</p>
+                  <!-- <h3>Status : <span class="font-light">{{value?.status}} </span></h3> -->
+              </div>
+          </div>
+      </div>
+      <!-- <div class="paddig">
+          <div class="reviws-main">
+              <div class="review">
+                  <h3>Lorem Ipsum</h3>
+                  <h4>8 days ago</h4>
+              </div>
+          </div>
+          <div class="rating-main">
+              <div class="rating">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <p>Daughter loved this card! so glad I sent it. She is still young but born in a year when family surrounded you patiently waiting for the precious new baby to arrive!</p>
+                  <h3>Status : <span class="font-light">Positive </span></h3>
+              </div>
+          </div>
+      </div> -->
+
+
+      <!-- <h1>Amazon Gift Card - Email - Birthday (No Tweets) [Someecards]</h1>
+      <div class="reviws-head">
+          <h2>Reviews</h2>
+      </div>
+      <div class="paddig">
+          <div class="reviws-main">
+              <div class="review">
+                  <h3>Lorem Ipsum</h3>
+                  <h4>30 days ago</h4>
+              </div>
+          </div>
+          <div class="rating-main">
+              <div class="rating">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <h3>Status : <span class="font-light">Positive </span></h3>
+              </div>
+          </div>
+      </div>
+      <div class="paddig">
+          <div class="reviws-main">
+              <div class="review">
+                  <h3>Lorem Ipsum</h3>
+                  <h4>1 days ago</h4>
+              </div>
+          </div>
+          <div class="rating-main">
+              <div class="rating">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  <h3>Status : <span class="font-light">Positive </span></h3>
+              </div>
+          </div>
+      </div>-->
+  </div> 
+  
+</body>
