@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300;400;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+.pgSize {
+    width: 1200px;
+    margin: 0 auto;
+}
+h1 {
+    margin: 0;
+    padding-bottom: 2%;
+    font-size: 22px;
+}
+.reviws-head h2 {
+    font-weight: 600;
+    margin: 0;
+    color: #000;
+    padding-bottom: 2%;
+    font-size: 22px;
+
+}
+.review h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.review h4 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: #85827e;
+}
+.checked {
+    color: #ffa500;
+}
+.reviws-main {
+    display: inline-block;
+    width: 18%;
+    vertical-align: top;
+}
+.rating-main {
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+}
+.font-light {
+    font-weight: 400;
+    color: #85827e;
+}
+.rating h3 {
+    font-size: 16px;
+}
+.paddig {
+    padding-bottom: 2%;
+}
+.rating p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+@media only screen and
+(min-width: 10px)and
+(max-width: 1200px) {
+	.pgSize {
+        width: auto;
+        margin: 0px 41px;
+    }
+}
+@media only screen and
+(min-width: 10px)and
+(max-width: 768px) {
+	.reviws-main {
+        display: block;
+        width: auto;
+        padding-bottom: 4%;
+    }
+    .rating-main {
+        display: block;
+        width: auto;
+    }
+    .paddig {
+        padding-bottom: 8%;
+    }
+    .review h3 {
+        padding-bottom: 7px;
+    }
+    .reviws-head h2 {
+        padding-bottom: 5%;
+    }
+}
+@media only screen and
+(min-width: 10px)and
+(max-width: 500px) {
+	h1 {
+        padding-bottom: 7%;
+        font-size: 17px;
+    }
+    .reviws-head h2 {
+        padding-bottom: 8%;
+    }
+    .reviws-main {
+        padding-bottom: 7%;
+    }
+    .paddig {
+        padding-bottom: 10%;
+    }
+    
+}
+@media only screen and
+(min-width: 10px)and
+(max-width: 460px) {
+	.reviws-main {
+        display: block;
+        width: auto;
+    }
+    .rating-main {
+        display: block;
+        width: auto;
+    }
+}

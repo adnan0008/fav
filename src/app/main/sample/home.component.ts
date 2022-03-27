@@ -9,6 +9,8 @@ import { Component, OnInit } from "@angular/core";
 export class HomeComponent implements OnInit {
   products: any[] = [];
   productReviews:any[] = [];
+  public openSearchRef = false;
+  public searchText = '';
   constructor(private httpService: HttpService) {}
 
   public contentHeader: object;
@@ -46,5 +48,15 @@ export class HomeComponent implements OnInit {
       if(response && response?.get_json )
       this.products = response?.get_json
     });
+  }
+
+  searchUpdate(event) {
+    const val = event.target.value.toLowerCase();
+    // if (val !== '') {
+    //   this.document.querySelector('.app-content').classList.add('show-overlay');
+    // } else {
+    //   this.document.querySelector('.app-content').classList.remove('show-overlay');
+    // }
+    // this.autoSuggestion(event);
   }
 }
