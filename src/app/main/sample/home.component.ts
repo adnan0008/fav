@@ -40,18 +40,18 @@ export class HomeComponent implements OnInit {
         ],
       },
     };
-    const formData = new FormData();
-    formData.append("search", "cards");
-    // , {headers:{'Authorization': `Token ${localStorage.getItem('token')}`}}
-    this.httpService.post("api/get", formData).subscribe((response) => {
-      console.log(response);
-      if(response && response?.get_json )
-      this.products = response?.get_json
-    });
+ 
   }
 
   searchUpdate(event) {
     const val = event.target.value.toLowerCase();
+    const formData = new FormData();
+    formData.append("search", val);
+    // , {headers:{'Authorization': `Token ${localStorage.getItem('token')}`}}
+    this.httpService.post("api/get", formData).subscribe((response) => {
+      if(response && response?.get_json )
+      this.products = response?.get_json
+    });
     // if (val !== '') {
     //   this.document.querySelector('.app-content').classList.add('show-overlay');
     // } else {
