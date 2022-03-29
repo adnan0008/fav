@@ -7,18 +7,28 @@ body {
     width: 1200px;
     margin: 0 auto;
 }
-h1 {
+.mainPadding{
+    padding: 4% 0;
+    overflow: hidden;
+}
+h1{
     margin: 0;
     padding-bottom: 2%;
     font-size: 22px;
 }
-.reviws-head h2 {
+h2{
+    margin: 0;
+    font-size: 22px;
+}
+p{
+    line-height: 1.5;
+}
+.reviws-head{
     font-weight: 600;
     margin: 0;
     color: #000;
     padding-bottom: 2%;
-    font-size: 22px;
-
+    font-size: 30px;
 }
 .review h3 {
     margin: 0;
@@ -35,16 +45,6 @@ h1 {
 .checked {
     color: #ffa500;
 }
-.reviws-main {
-    display: inline-block;
-    width: 18%;
-    vertical-align: top;
-}
-.rating-main {
-    display: inline-block;
-    width: 80%;
-    vertical-align: top;
-}
 .font-light {
     font-weight: 400;
     color: #85827e;
@@ -59,12 +59,41 @@ h1 {
     font-size: 16px;
     line-height: 1.5;
 }
+.productyImg, .productyText {
+    display: inline-block;
+    vertical-align: top;
+}
+.productyImg{
+    width: 17%;
+    margin-right: 4%;
+}
+.productyText{
+    width: 77%;
+}
+.productyImg img{
+    width: 200px;
+}
+.productyText h1{
+    padding-bottom: 0;
+    font-size: 26px;
+}
+.reviws-head{
+    padding-top: 3%;
+}
+.priceLight{
+    font-weight: 400;
+    font-size: 18px;
+}
+.productyText h2{
+    font-size: 20px;
+    padding-top: 15px;
+}
 @media only screen and
 (min-width: 10px)and
 (max-width: 1200px) {
 	.pgSize {
         width: auto;
-        margin: 0px 41px;
+        margin: 0px 20px;
     }
 }
 @media only screen and
@@ -85,8 +114,21 @@ h1 {
     .review h3 {
         padding-bottom: 7px;
     }
-    .reviws-head h2 {
+    .reviws-head {
         padding-bottom: 5%;
+    }
+    .productyImg, .productyText {
+        display: block;
+    }
+    .productyImg, .productyText{
+        width: auto;
+        margin-right: 0%;
+    }
+    .productyText {
+        padding-top: 4%;
+    }
+    .productyImg img {
+        width: auto;
     }
 }
 @media only screen and
@@ -96,8 +138,8 @@ h1 {
         padding-bottom: 7%;
         font-size: 17px;
     }
-    .reviws-head h2 {
-        padding-bottom: 8%;
+    .reviws-head{
+        padding-bottom: 5%;
     }
     .reviws-main {
         padding-bottom: 7%;
