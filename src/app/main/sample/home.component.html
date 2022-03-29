@@ -64,6 +64,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <div id="charts"></div>
+  <canvas class="canvas" width="500" height="500"></canvas>
   <div class="pgSize" *ngFor="let data of products">
       <h1>{{data?.title}}</h1>
       <div class="reviws-head">
@@ -152,5 +154,8 @@
           </div>
       </div>-->
   </div> 
+  <div *ngIf="products && !products.length">
+<h4 style="padding:50px;">No Record Found</h4>
+  </div>
   
 </body>
