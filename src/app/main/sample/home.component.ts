@@ -72,11 +72,11 @@ charts: any = [];
             name: "Home",
             isLink: true,
             link: "/",
-          },
-          {
-            name: "Sample",
-            isLink: false,
-          },
+          }
+          // {
+          //   name: "Sample",
+          //   isLink: false,
+          // },
         ],
       },
     };
